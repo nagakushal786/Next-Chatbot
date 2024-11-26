@@ -6,7 +6,7 @@ import React from "react";
 
 interface PageProps{
     params: {
-        url: string | string[] | undefined
+        url: string[]
     }
 }
 
@@ -18,7 +18,7 @@ function reconstructUrl({url}: {url: string[]}){
 
 const Page=async ({params}: PageProps)=> {
     const sessionCookie=(await cookies()).get("sessionId")?.value;
-    const reconstructedUrl=reconstructUrl({url: params.url as string[]});
+    const reconstructedUrl=reconstructUrl({url: params.url});
 
     const isAlreadyIndexed=await redis.sismember("indexed-urls", reconstructedUrl);
 
