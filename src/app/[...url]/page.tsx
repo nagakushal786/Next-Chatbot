@@ -29,12 +29,16 @@ const Page = async ({ params }: PageProps) => {
     const resolvedParams = await params; // Resolve the params promise
     const { url } = resolvedParams;
 
+    console.log("Resolved URL:", url); // Add logging to debug
+
     if (!url || url.length === 0) {
       throw new Error("Invalid URL parameter.");
     }
 
     const sessionCookie = (await cookies()).get("sessionId")?.value || "guest";
     const reconstructedUrl = reconstructUrl({ url });
+
+    console.log("Reconstructed URL:", reconstructedUrl); // Add logging to debug
 
     // Check if URL has already been indexed
     const isAlreadyIndexed = await redis.sismember("indexed-urls", reconstructedUrl);
@@ -68,7 +72,7 @@ const Page = async ({ params }: PageProps) => {
     console.error("Error occurred on the server:", error);
 
     return (
-      <div className="min-h-screen bg-black flex justify-center items-center">
+      <div className="min-h-screen bg-black flex justify-center items-center flex-col">
         <h1 className="text-3xl text-white">An error occurred while processing your request.</h1>
         <p className="text-gray-400 mt-2">Please check the URL and try again.</p>
       </div>
