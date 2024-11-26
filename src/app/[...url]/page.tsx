@@ -10,12 +10,6 @@ interface PageProps {
   }>;
 }
 
-// Base origin for local and production environments
-const baseOrigin =
-  process.env.NODE_ENV === "production"
-    ? "https://next-chatbot-mauve.vercel.app"
-    : "http://localhost:3000";
-
 // Function to reconstruct and sanitize the URL
 function reconstructUrl({ url }: { url: string[] }) {
   const decodedComponents = url.map((comp) => decodeURIComponent(comp));

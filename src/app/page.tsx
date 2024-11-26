@@ -12,8 +12,11 @@ export default function Home() {
   const handleRedirect = () => {
     if (!url) return;
 
-    const formattedUrl = url.replace(/(^\w+:|^)\/\//, ""); 
-    router.push(`/${encodeURIComponent(formattedUrl)}`); // Redirect to the dynamically generated page
+    // Remove protocol for cleaner route if user includes "http(s)://"
+    const formattedUrl = url.replace(/(^\w+:|^)\/\//, "");
+
+    // Redirect to the dynamically generated page by encoding the URL path
+    router.push(`/${encodeURIComponent(formattedUrl)}`);
   };
 
   return (
