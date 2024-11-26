@@ -1,8 +1,18 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NextBot
+A personalized chatbot built using NextJS, Typescript, NPM ai SDK, Rag-Chat with Upstash Redis database styled using Tailwind CSS, NextUI and ShadcnUI library.
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the project into your local system:
+```bash
+git clone https://github.com/nagakushal786/Next-Chatbot.git
+```
+2. Go into your project:
+```bash
+cd Next-Chatbot
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
@@ -16,9 +26,11 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## How to use the App
+Enter the URL of the page with which you want to chat with the bot. Then you will get the interface where you can ask the nextbot regarding the information present in the URL.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Note
+Upstash database has only provided 7 trails of chat with the bot in the free plan.
 
 ## Learn More
 
@@ -27,10 +39,6 @@ To learn more about Next.js, take a look at the following resources:
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js).
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Your feedback and contributions are welcome!
