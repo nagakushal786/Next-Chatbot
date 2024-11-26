@@ -12,7 +12,14 @@ interface PageProps {
 
 function reconstructUrl({ url }: { url: string[] }) {
     const decodedComponents = url.map((comp) => decodeURIComponent(comp));
-    return decodedComponents.join("/");
+    const joinedUrl = decodedComponents.join("/");
+  
+    // Add protocol if missing (assumes https by default)
+    if (!/^https?:\/\//.test(joinedUrl)) {
+      return `https://${joinedUrl}`;
+    }
+  
+    return joinedUrl;
 }
 
 const Page = async ({ params }: PageProps) => {
